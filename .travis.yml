@@ -1,3 +1,4 @@
-
+before-install:
+  - sudo apt-get install check
 install:
-  - sudo apt-get install check && make clean && make test
+  - make clean && make test
