@@ -145,6 +145,82 @@ START_TEST(test_2d_midpoint)
 }
 END_TEST
 
+/* coord_2d_area_triangle Test */
+START_TEST(test_2d_area_triangle)
+{
+    coord_2d_t a;
+    coord_2d_t b;
+    coord_2d_t c;
+    // coord_2d_t area;
+    coord_2d_t mid;
+    // coord_2d_t exp;
+
+    a.x = 1;
+    a.y = 2;
+    b.x = 3;
+    b.y = 4;
+    c.x = 6;
+    c.y = 2;
+
+
+
+    int area = coord_2d_area_triangle(&a,&b,&c);
+
+    int exp = 5;
+
+    ck_assert(&area == &exp);
+    // coord_2d_t a;
+    // coord_2d_t b;
+    // coord_2d_t mid;
+    // coord_2d_t exp;
+    //
+    // a.x = b.x = 0;
+    // a.y = b.y = 0;
+    // coord_2d_midpoint(&mid, &a, &b);
+    // exp.x = 0;
+    // exp.y = 0;
+    // ck_assert(coord_2d_eq(&mid, &exp));
+    //
+    // a.x = 0;
+    // a.y = 0;
+    // b.x = 3;
+    // b.y = 0;
+    // coord_2d_midpoint(&mid, &a, &b);
+    // exp.x = 1.5;
+    // exp.y = 0;
+    // ck_assert(coord_2d_eq(&mid, &exp));
+    //
+    // a.x = 0;
+    // a.y = 0;
+    // b.x = 0;
+    // b.y = 3;
+    // coord_2d_midpoint(&mid, &a, &b);
+    // exp.x = 0;
+    // exp.y = 1.5;
+    // ck_assert(coord_2d_eq(&mid, &exp));
+    //
+    // a.x = 0;
+    // a.y = 0;
+    // b.x = 3;
+    // b.y = 3;
+    // coord_2d_midpoint(&mid, &a, &b);
+    // exp.x = 1.5;
+    // exp.y = 1.5;
+    // ck_assert(coord_2d_eq(&mid, &exp));
+    //
+    // a.x = 1;
+    // a.y = 2;
+    // b.x = 3;
+    // b.y = 4;
+    // coord_2d_midpoint(&mid, &a, &b);
+    // exp.x = 2;
+    // exp.y = 3;
+    // ck_assert(coord_2d_eq(&mid, &exp));
+
+}
+END_TEST
+
+
 /* coord_2d Test Suite */
 Suite* coord_2d_suite(void)
 {
@@ -160,6 +236,9 @@ Suite* coord_2d_suite(void)
     tcase_add_test(tc_2d_dist, test_2d_dist);
 
     TCase* tc_2d_midpoint = tcase_create("coord_2d_midpoint");
+    tcase_add_test(tc_2d_midpoint, test_2d_midpoint);
+
+    TCase* tc_2d_area_triangle = tcase_create("coord_2d_area_triangle");
     tcase_add_test(tc_2d_midpoint, test_2d_midpoint);
 
     /* Add Cases to Suite */
