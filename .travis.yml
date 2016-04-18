@@ -1,2 +1,2 @@
 sudo: required
-install: make get-deps
+install: sudo apt-get install check && make
