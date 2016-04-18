@@ -1,4 +1,4 @@
 # sudo: required
 # install: sudo apt-get install check && make
-
-./configure && make && make test
+language: c
+# ./configure && make && make test
