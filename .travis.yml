@@ -1,2 +1,2 @@
 sudo: required
-install: make
+install: make get-deps
