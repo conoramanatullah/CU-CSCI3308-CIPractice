@@ -1,1 +1,1 @@
-language: c
+install: make clean && make test
