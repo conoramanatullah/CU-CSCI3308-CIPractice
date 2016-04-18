@@ -1,2 +1,4 @@
-sudo: required
-install: sudo apt-get install check && make
+# sudo: required
+# install: sudo apt-get install check && make
+
+./configure && make && make test
